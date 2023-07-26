@@ -6,5 +6,5 @@ rule "Call rest api"
 	when 
 		item: CallRestApi(type=="REST")
 	then
-		item.setStatus(String.valueOf(item.getMethod()));
+		item.setStatus(item.getMethod());
 	end 
