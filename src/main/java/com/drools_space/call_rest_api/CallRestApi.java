@@ -6,12 +6,33 @@ package com.drools_space.call_rest_api;
 
 public class CallRestApi implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public CallRestApi() {
-    }
+	private java.lang.String type;
+	private java.lang.String status;
 
+	public CallRestApi() {
+	}
 
+	public java.lang.String getType() {
+		return this.type;
+	}
 
+	public void setType(java.lang.String type) {
+		this.type = type;
+	}
+
+	public java.lang.String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public CallRestApi(java.lang.String type, java.lang.String status) {
+		this.type = type;
+		this.status = status;
+	}
 
 }
