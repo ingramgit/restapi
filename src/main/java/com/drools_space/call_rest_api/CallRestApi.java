@@ -15,7 +15,7 @@ public class CallRestApi implements java.io.Serializable {
 	static final long serialVersionUID = 1L;
 
 	private java.lang.String type;
-	private java.lang.String status;
+	private java.lang.String response;
 
 	public CallRestApi() {
 	}
@@ -28,35 +28,35 @@ public class CallRestApi implements java.io.Serializable {
 		this.type = type;
 	}
 
-	public java.lang.String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(java.lang.String status) {
-		this.status = status;
-	}
-
-	public CallRestApi(java.lang.String type, java.lang.String status) {
-		this.type = type;
-		this.status = status;
-	}
-	
 	public static String getMethod() {
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create("https://gorest.co.in/public/v2/todos"))
-				.method("GET", HttpRequest.BodyPublishers.noBody())
-				.build();
+				.method("GET", HttpRequest.BodyPublishers.noBody()).build();
 		HttpResponse<String> response = null;
 		try {
-			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+			response = HttpClient.newHttpClient().send(request,
+					HttpResponse.BodyHandlers.ofString());
 			return response.body();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
+	}
+
+	public java.lang.String getResponse() {
+		return this.response;
+	}
+
+	public void setResponse(java.lang.String response) {
+		this.response = response;
+	}
+
+	public CallRestApi(java.lang.String type, java.lang.String response) {
+		this.type = type;
+		this.response = response;
 	}
 
 }
