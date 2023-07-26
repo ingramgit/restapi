@@ -6,5 +6,5 @@ rule "Call rest api"
 	when 
 		item: CallRestApi(type=="GET")
 	then
-		item.setStatus(item.getMethod());
+		item.setResponse(item.getMethod());
 	end 
