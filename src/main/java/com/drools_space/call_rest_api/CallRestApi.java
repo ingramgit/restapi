@@ -41,24 +41,22 @@ public class CallRestApi implements java.io.Serializable {
 		this.status = status;
 	}
 	
-	public static int getExample() {
+	public static String getMethod() {
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create("https://www.google.com"))
-				.header("X-RapidAPI-Host", "jokes-by-api-ninjas.p.rapidapi.com")
-				.header("X-RapidAPI-Key", "your-rapidapi-key")
+				.uri(URI.create("https://gorest.co.in/public/v2/todos"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		HttpResponse<String> response = null;
 		try {
 			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-			return response.statusCode();
+			return response.body();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		return 0;
+		return null;
 	}
 
 }
