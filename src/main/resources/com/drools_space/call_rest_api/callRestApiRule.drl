@@ -4,7 +4,7 @@ import com.drools_space.call_rest_api.CallRestApi;
 
 rule "Call rest api"
 	when 
-		item: CallRestApi(type=="REST")
+		item: CallRestApi(type=="GET")
 	then
 		item.setStatus(item.getMethod());
 	end 
