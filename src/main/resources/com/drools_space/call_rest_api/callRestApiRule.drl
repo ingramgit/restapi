@@ -1,10 +1,10 @@
 package com.drools_space.call_rest_api;
 
-import com.drools_space.call_rest_api.CallRestAPI;
+import com.drools_space.call_rest_api.CallRestApi;
 
 rule "Call rest api"
 	when 
-		item: CallRestAPI(type=="REST")
+		item: CallRestApi(type=="REST")
 	then
 		item.setStatus(item.getExample());
 	end 
